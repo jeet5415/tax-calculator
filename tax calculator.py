@@ -1,35 +1,57 @@
-monthly_salary = float(input("Enter monthly salary : "))
+basic_salary = float(input("Enter monthly basic salary: ₹"))
+hra = float(input("Enter monthly HRA: ₹"))
+special_allowance = float(input("Enter monthly special allowance: ₹"))
+bonus = float(input("Enter yearly bonus: ₹"))
+pf = float(input("Enter yearly PF contribution: ₹"))
+deduction_80c = float(input("Enter total 80C investments: ₹"))
+tds = float(input("Enter yearly tax already deducted (TDS): ₹"))
 
-annual_income = monthly_salary * 12
+if deduction_80c > 150000:
+    deduction_80c = 150000
 
+# Annual income
+annual_basic = basic_salary * 12
+annual_hra = hra * 12
+annual_special = special_allowance * 12
+
+gross_income = annual_basic + annual_hra + annual_special + bonus
+
+# Deductions
+standard_deduction = 75000
+total_deductions = (
+    standard_deduction
+    + pf
+    + deduction_80c
+)
+
+taxable_income = gross_income - total_deductions
+
+if taxable_income < 0:
+    taxable_income = 0
+
+# Tax Calculation
 tax = 0
 
-if annual_income <= 400000:
+if taxable_income <= 400000:
     tax = 0
-
-elif annual_income <= 800000:
-    tax = (annual_income - 400000) * 0.05
-
-elif annual_income <= 1200000:
-    tax = 20000 + (annual_income - 800000) * 0.10
-
-elif annual_income <= 1600000:
-    tax = 60000 + (annual_income - 1200000) * 0.15
-
-elif annual_income <= 2000000:
-    tax = 120000 + (annual_income - 1600000) * 0.20
-
-elif annual_income <= 2400000:
-    tax = 200000 + (annual_income - 2000000) * 0.25
-
+elif taxable_income <= 800000:
+    tax = (taxable_income - 400000) * 0.05
+elif taxable_income <= 1200000:
+    tax = 20000 + (taxable_income - 800000) * 0.10
+elif taxable_income <= 1600000:
+    tax = 60000 + (taxable_income - 1200000) * 0.15
+elif taxable_income <= 2000000:
+    tax = 120000 + (taxable_income - 1600000) * 0.20
+elif taxable_income <= 2400000:
+    tax = 200000 + (taxable_income - 2000000) * 0.25
 else:
-    tax = 300000 + (annual_income - 2400000) * 0.30
+    tax = 300000 + (taxable_income - 2400000) * 0.30
 
-monthly_tax = tax / 12
-monthly_take_home = monthly_salary - monthly_tax
+remaining_tax = tax - tds
 
-
-print("Annual Income:", annual_income)
-print("Annual Tax: ", tax)
-print("Monthly Tax: ", monthly_tax)
-print("Monthly Take Home: ",monthly_take_home)
+print("Gross Income: ₹", gross_income)
+print("Taxable Income: ₹", taxable_income)
+print("80C Deduction Used: ₹", deduction_80c)
+print("Final Tax: ₹", tax)
+print("TDS Paid: ₹", tds)
+print(" Tax Payable: ₹", remaining_tax)
