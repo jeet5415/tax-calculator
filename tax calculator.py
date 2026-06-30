@@ -9,14 +9,12 @@ tds = float(input("Enter yearly tax already deducted (TDS): ₹"))
 if deduction_80c > 150000:
     deduction_80c = 150000
 
-# Annual income
 annual_basic = basic_salary * 12
 annual_hra = hra * 12
 annual_special = special_allowance * 12
 
 gross_income = annual_basic + annual_hra + annual_special + bonus
 
-# Deductions
 standard_deduction = 75000
 total_deductions = (
     standard_deduction
@@ -29,7 +27,7 @@ taxable_income = gross_income - total_deductions
 if taxable_income < 0:
     taxable_income = 0
 
-# Tax Calculation
+
 tax = 0
 
 if taxable_income <= 400000:
@@ -51,7 +49,6 @@ remaining_tax = tax - tds
 
 print("Gross Income: ₹", gross_income)
 print("Taxable Income: ₹", taxable_income)
-print("80C Deduction Used: ₹", deduction_80c)
 print("Final Tax: ₹", tax)
 print("TDS Paid: ₹", tds)
 print(" Tax Payable: ₹", remaining_tax)
