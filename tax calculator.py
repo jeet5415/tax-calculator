@@ -16,11 +16,7 @@ annual_special = special_allowance * 12
 gross_income = annual_basic + annual_hra + annual_special + bonus
 
 standard_deduction = 75000
-total_deductions = (
-    standard_deduction
-    + pf
-    + deduction_80c
-)
+total_deductions = (standard_deduction+ pf+ deduction_80c)
 
 taxable_income = gross_income - total_deductions
 
