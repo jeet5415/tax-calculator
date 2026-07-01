@@ -1,10 +1,7 @@
 def calculate_tax(taxable_income):
     tax = 0
 
-    if taxable_income <= 400000:
-        tax = 0
-
-    elif taxable_income <= 800000:
+ if taxable_income <= 800000:
         tax = (taxable_income - 400000) * 0.05
 
     elif taxable_income <= 1200000:
