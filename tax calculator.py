@@ -26,12 +26,12 @@ def calculate_tax(taxable_income):
 
 
 def main():
-    gross_salary = float(input("Enter Gross Salary from Form 16: ₹ "))
-    standard_deduction = float(input("Enter Standard Deduction: ₹ "))
-    deduction_80c = float(input("Enter 80C Deduction: ₹ "))
-    tds_paid = float(input("Enter TDS already deducted: ₹ "))
+    gross_salary = 1300000
+    standard_deduction = 40000
+    deduction_80c = 75000
+    tds_paid =40000
 
-    total_deductions = standard_deduction + deduction_80c 
+    total_deductions = standard_deduction + deduction_80c
     taxable_income = gross_salary - total_deductions
 
     if taxable_income < 0:
@@ -42,8 +42,12 @@ def main():
     total_tax = tax + cess
     balance = total_tax - tds_paid
 
-   
     print("Gross Salary: ₹", gross_salary)
     print("Total Deductions: ₹", total_deductions)
     print("Taxable Income: ₹", taxable_income)
     print("Tax: ₹", tax)
+    print("Cess: ₹", cess)
+    print("Total Tax: ₹", total_tax)
+
+
+main()
