@@ -1,6 +1,9 @@
 def calculate_tax(taxable_income):
     tax = 0
 
+    if taxable_income <= 1200000:
+        return 0   # rebate  87A
+
     if taxable_income > 400000:
 
         if taxable_income <= 800000:
@@ -25,12 +28,11 @@ def calculate_tax(taxable_income):
 
 
 def main():
-    gross_salary = 700000
-    standard_deduction = 40000
-    deduction_80c = 75000
-    tds_paid =40000
+    gross_salary = 1210000
+    standard_deduction = 75000   # for new regime
+    tds_paid = 40000
 
-    total_deductions = standard_deduction + deduction_80c
+    total_deductions = standard_deduction
     taxable_income = gross_salary - total_deductions
 
     if taxable_income < 0:
@@ -47,6 +49,11 @@ def main():
     print("Tax: ₹", tax)
     print("Cess: ₹", cess)
     print("Total Tax: ₹", total_tax)
+
+    if balance > 0:
+        print("Tax need to be paid: ₹", balance)
+    else:
+        print("Refund: ₹", abs(balance))
 
 
 main()
