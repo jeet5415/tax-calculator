@@ -2,14 +2,12 @@ def calculate_tax(x):
     if x <= 1200000:
         return 0   # rebate 87A
 
-    tax = 0
-
-    tax = tax + min(400000, max(0, x - 400000)) * 0.05
-    tax = tax + min(400000, max(0, x - 800000)) * 0.10
-    tax = tax + min(400000, max(0, x - 1200000)) * 0.15
-    tax = tax + min(400000, max(0, x - 1600000)) * 0.20
-    tax = tax + min(400000, max(0, x - 2000000)) * 0.25
-    tax = tax + max(0, x - 2400000) * 0.30
+    tax = ( max(0, min(x, 800000) - 400000) * 0.05 +
+        max(0, min(x, 1200000) - 800000) * 0.10 +
+        max(0, min(x, 1600000) - 1200000) * 0.15 +
+        max(0, min(x, 2000000) - 1600000) * 0.20 +
+        max(0, min(x, 2400000) - 2000000) * 0.25 +
+        max(0, x - 2400000) * 0.30)
 
     return tax
 
