@@ -23,11 +23,7 @@ def main():
 
 
     gross_income = gross_salary + savings_interest + dividend_income
-
-    # Total Deductions
     total_deductions = standard_deduction
-
-    # Taxable Income
     taxable_income = max(0, gross_income - total_deductions)
 
     # Section 288A (Round off taxable income to nearest ₹10)
