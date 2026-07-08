@@ -33,12 +33,12 @@ def main():
 
 
     tax_regime = "New Regime"
-   
+    
 
     # ==============================
     # PART B - SALARY
     # ==============================
-    gross_salary = 1400000
+    gross_salary = 14000000
     exempt_allowance = 20000
     net_salary = gross_salary - exempt_allowance
 
@@ -66,8 +66,39 @@ def main():
     taxable_income = round(taxable_income / 10) * 10
 
     income_tax = calculate_tax(taxable_income)
-    cess = income_tax * 0.04
-    total_tax = income_tax + cess
+    
+    # ==========================================
+    # NEW CODE ADDED: SURCHARGE & MARGINAL RELIEF
+    # ==========================================
+    surcharge = 0
+    if taxable_income > 20000000:
+        surcharge = income_tax * 0.25
+        tax_at_threshold = calculate_tax(20000000)
+        surcharge_at_threshold = tax_at_threshold * 0.15
+        max_tax = tax_at_threshold + surcharge_at_threshold + (taxable_income - 20000000)
+        if (income_tax + surcharge) > max_tax:
+            surcharge = max_tax - income_tax
+            
+    elif taxable_income > 10000000:
+        surcharge = income_tax * 0.15
+        tax_at_threshold = calculate_tax(10000000)
+        surcharge_at_threshold = tax_at_threshold * 0.10
+        max_tax = tax_at_threshold + surcharge_at_threshold + (taxable_income - 10000000)
+        if (income_tax + surcharge) > max_tax:
+            surcharge = max_tax - income_tax
+            
+    elif taxable_income > 5000000:
+        surcharge = income_tax * 0.10
+        tax_at_threshold = calculate_tax(5000000)
+        max_tax = tax_at_threshold + (taxable_income - 5000000)
+        if (income_tax + surcharge) > max_tax:
+            surcharge = max_tax - income_tax
+            
+    surcharge = max(0, surcharge)
+    # ==========================================
+
+    cess = (income_tax + surcharge) * 0.04
+    total_tax = income_tax + surcharge + cess
 
     tds_paid = 30000
     advance_tax = 10000
@@ -88,16 +119,11 @@ def main():
 
     print("\n---------- Income Details ----------")
     print("Gross Salary : ₹", gross_salary)
-    print("Net Salary : ₹", net_salary)
-    print("House Property Income : ₹", house_property_income)
-    print("Savings Interest : ₹", savings_interest)
-    print("Dividend Income : ₹", dividend_income)
-    print("Gross Income : ₹", gross_income)
-    print("Total Deductions : ₹", total_deductions)
     print("Taxable Income : ₹", taxable_income)
 
     print("\n---------- Tax Details ----------")
     print("Income Tax : ₹", income_tax)
+    print("Surcharge : ₹", surcharge) # New print statement
     print("Health & Education Cess : ₹", cess)
     print("Total Tax : ₹", total_tax)
     print("TDS Paid : ₹", tds_paid)
@@ -109,4 +135,5 @@ def main():
         print("Tax Payable : ₹", balance)
     else:
         print("Refund Amount : ₹", abs(balance))
+
 main()
