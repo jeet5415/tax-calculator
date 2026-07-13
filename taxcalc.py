@@ -130,7 +130,7 @@ def run_tests():
         },
         {
             # Test Case 2: Under 12 Lakhs 
-            "first_name": "Alice",
+            "first_name": "jiya",
             "last_name": "Sharma",
             "gross_salary": 1150000, 
             "tds_paid": 10000,
@@ -138,7 +138,7 @@ def run_tests():
         },
         {
             # Test Case 3: 60 Lakhs Salary (Surcharge @ 10%)
-            "first_name": "Bob",
+            "first_name": "random",
             "last_name": "Kumar",
             "gross_salary": 6000000, 
             "tds_paid": 500000,
@@ -146,7 +146,7 @@ def run_tests():
         },
         {
             # Test Case 4: 2.2 Cr Salary (Surcharge @ 25%)
-            "first_name": "Charlie",
+            "first_name": "aman",
             "last_name": "Singh",
             "gross_salary": 22000000, 
             "tds_paid": 5000000,
