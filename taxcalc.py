@@ -125,7 +125,7 @@ def run_tests():
             "first_name": "Jeet",
             "last_name": "Maheshwari",
             "gross_salary": 14000000, 
-            "tds_paid": 30000,
+            "tds_paid": 40000,
             "advance_tax": 10000
         },
         {
