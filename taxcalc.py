@@ -140,7 +140,7 @@ def run_tests():
             # Test Case 3: 60 Lakhs Salary (Surcharge @ 10%)
             "first_name": "random",
             "last_name": "Kumar",
-            "gross_salary": 6000000, 
+            "gross_salary": 600000, 
             "tds_paid": 500000,
             "advance_tax": 100000
         },
