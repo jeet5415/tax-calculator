@@ -141,7 +141,7 @@ def run_tests():
             "first_name": "random",
             "last_name": "Kumar",
             "gross_salary": 600000, 
-            "tds_paid": 500000,
+            "tds_paid": 50000,
             "advance_tax": 100000
         },
         {
