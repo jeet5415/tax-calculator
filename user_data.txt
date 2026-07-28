@@ -1,0 +1,15 @@
+assessment_year=2026-27
+pan=ABCDE1234F
+first_name=YourName
+last_name=YourSurname
+date_of_birth=DD/MM/YYYY
+tax_regime=New Regime
+gross_salary=1400000
+house_rent=120000
+municipal_tax=5000
+home_loan_interest=150000
+savings_interest=8000
+dividend_income=12000
+total_deductions=75000
+tds_paid=30000
+advance_tax=10000
