@@ -1,6 +1,7 @@
 def calculate_tax(x):
+    
     if x <= 1200000:
-        return 0
+        return 0   # Section 87A rebate
 
     tax = (
         (max(0, min(x, 800000) - 400000) * 0.05) +
@@ -15,20 +16,22 @@ def calculate_tax(x):
 
 
 def read_user_data():
-
     file = open("user_data.txt", "r")
 
     user_data = {}
 
     for line in file:
-
         line = line.strip()
 
-        if line == "":
+        if line == "" or line.startswith("#"):
             continue
 
         key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip()
 
+        if value == "":
+            continue 
         if value.isdigit():
             value = int(value)
 
@@ -58,9 +61,10 @@ def process_itr(user_data):
     # ==============================
 
     gross_salary = user_data.get("gross_salary", 0)
-    exempt_allowance = 20000
+    exempt_allowance = user_data.get("exempt_allowance", 20000)
     net_salary = gross_salary - exempt_allowance
 
+    # House Property
     house_rent = user_data.get("house_rent", 120000)
     municipal_tax = user_data.get("municipal_tax", 5000)
     home_loan_interest = user_data.get("home_loan_interest", 150000)
@@ -71,9 +75,11 @@ def process_itr(user_data):
         - home_loan_interest
     )
 
+    # Other Sources
     savings_interest = user_data.get("savings_interest", 8000)
     dividend_income = user_data.get("dividend_income", 12000)
 
+    # Deductions
     total_deductions = user_data.get("total_deductions", 75000)
 
     gross_income = (
@@ -83,7 +89,8 @@ def process_itr(user_data):
         + dividend_income
     )
 
-    taxable_income = max(0, gross_income - total_deductions)
+    taxable_income = gross_income - total_deductions
+    taxable_income = max(0, taxable_income)
     taxable_income = round(taxable_income / 10) * 10
 
     income_tax = calculate_tax(taxable_income)
@@ -169,6 +176,12 @@ def process_itr(user_data):
 
     print("\n---------- Income & Tax Details ----------")
     print(f"Gross Salary       : ₹ {gross_salary:,.2f}")
+    print(f"Net Salary         : ₹ {net_salary:,.2f}")
+    print(f"House Property Inc : ₹ {house_property_income:,.2f}")
+    print(f"Savings Interest   : ₹ {savings_interest:,.2f}")
+    print(f"Dividend Income    : ₹ {dividend_income:,.2f}")
+    print(f"Total Deductions   : ₹ {total_deductions:,.2f}")
+    print(f"Gross Income       : ₹ {gross_income:,.2f}")
     print(f"Taxable Income     : ₹ {taxable_income:,.2f}")
     print(f"Income Tax         : ₹ {income_tax:,.2f}")
     print(f"Surcharge          : ₹ {surcharge:,.2f}")
@@ -183,11 +196,10 @@ def process_itr(user_data):
     else:
         print(f"Refund Amount      : ₹ {abs(balance):,.2f}")
 
-    print("==========================================")
+    print("==========================================\n")
 
 
 if __name__ == "__main__":
-
     user_data = read_user_data()
 
     process_itr(user_data)
