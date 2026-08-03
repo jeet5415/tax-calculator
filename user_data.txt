@@ -5,16 +5,16 @@
 assessment_year=2026-27
  
 # PAN Number 
-pan=hplpm5831q
+pan=abcjk453s
  
 # First Name
 first_name=jeet
  
 # Last Name
-last_name=maheshwarri
+last_name=maheshwari
  
 # Date of Birth (DD/MM/YYYY)
-date_of_birth=10/05/2004
+date_of_birth=10/07/2004
  
 # Tax Regime — type either: New Regime  or  Old Regime
 tax_regime=New Regime
