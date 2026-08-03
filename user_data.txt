@@ -1,15 +1,63 @@
+# ITR-1 SAHAJ —  
+# ---------------- PART A: GENERAL INFORMATION ----------------
+ 
+# Assessment Year, e.g. 2026-27
 assessment_year=2026-27
-pan=ABCDE1234F
-first_name=YourName
-last_name=YourSurname
-date_of_birth=DD/MM/YYYY
+ 
+# PAN Number 
+pan=hplpm5831q
+ 
+# First Name
+first_name=jeet
+ 
+# Last Name
+last_name=maheshwarri
+ 
+# Date of Birth (DD/MM/YYYY)
+date_of_birth=10/05/2004
+ 
+# Tax Regime — type either: New Regime  or  Old Regime
 tax_regime=New Regime
-gross_salary=1400000
-house_rent=120000
-municipal_tax=5000
-home_loan_interest=150000
-savings_interest=8000
-dividend_income=12000
-total_deductions=75000
-tds_paid=30000
-advance_tax=10000
+ 
+ 
+# ---------------- PART B: SALARY INCOME ----------------
+ 
+# Gross Salary for the financial year (before any exemptions)
+gross_salary=1000000
+ 
+# Exempt allowance portion of salary (e.g. HRA/LTA exemption, standard deduction add-ons)
+# Leave blank to use the script's default (20000)
+exempt_allowance=40000
+ 
+# ---------------- PART B: HOUSE PROPERTY INCOME ----------------
+# (Leave all three blank if you don't own a house property)
+ 
+# Annual rent received / deemed rent
+house_rent=20000
+ 
+# Municipal taxes paid on the house property during the year
+municipal_tax=30000
+ 
+# Interest paid on home loan during the year
+home_loan_interest=40000
+ 
+# ---------------- PART B: INCOME FROM OTHER SOURCES ----------------
+ 
+# Interest earned from savings bank account / FDs
+savings_interest=0
+ 
+# Dividend income received
+dividend_income=500000
+  
+# ---------------- DEDUCTIONS ----------------
+
+# Total deductions claimed ( Standard Deduction)
+total_deductions=50000
+ 
+# ---------------- TAXES ALREADY PAID ----------------
+ 
+# Total TDS deducted (as per Form 16 / Form 26AS)
+tds_paid=0
+ 
+# Advance tax paid, if any
+advance_tax=50000
