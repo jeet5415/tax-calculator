@@ -1,6 +1,4 @@
-
-# ---------------- PART A: GENERAL INFORMATION ----------------
- 
+# ---------------- PART A: GENERAL INFORMATION ---------------- 
 # Assessment Year, e.g. 2026-27
 assessment_year=2026-27
  
@@ -78,12 +76,12 @@ opting_new_regime=Yes
 gross_salary=600000
  
 # Exempt allowance portion of salary (e.g. HRA/LTA exemption, standard deduction add-ons)
-# Leave blank to use the script's default (20000)
+# Leave blank for 0
 exempt_allowance=
  
  
 # ---------------- PART B: HOUSE PROPERTY INCOME ----------------
-# (Leave all three blank if you don't own a house property)
+
  
 # Annual rent received / deemed rent
 house_rent=
@@ -168,6 +166,3 @@ challan_serial_no=
  
 # Tax paid as per this challan
 tax_paid_challan=
- 
-
- 
