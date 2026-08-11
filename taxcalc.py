@@ -1,4 +1,3 @@
-
 def calculate_tax(x):
     
     tax = (
