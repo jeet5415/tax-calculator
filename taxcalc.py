@@ -1,3 +1,4 @@
+
 def calculate_tax(x): 
     tax = (
         (max(0, min(x, 800000) - 400000) * 0.05) +
@@ -9,12 +10,17 @@ def calculate_tax(x):
     )
  
     return tax 
+import os
+ 
+ 
 def read_user_data():
+    filepath = os.path.join("inputs", "user_data.txt")
+ 
     try:
-        file = open("user_data.txt", "r")
+        file = open(filepath, "r")
     except FileNotFoundError:
-        print("ERROR: 'user_data.txt' not found in this folder.")
-        print("Make sure user_data.txt is in the same directory as this script.")
+        print(f"ERROR: '{filepath}' not found.")
+        print("Make sure your data file is saved as 'user_data.txt' inside the 'inputs' folder.")
         raise SystemExit(1)
     user_data = {}
     for line in file:
@@ -43,9 +49,9 @@ def read_user_data():
  
 def get_general_info(user_data):
    
-    first_name = user_data.get("first_name", "Jeet")
+    first_name = user_data.get("first_name", "")
     middle_name = user_data.get("middle_name", "")
-    last_name = user_data.get("last_name", "Maheshwari")
+    last_name = user_data.get("last_name", "")
     full_name = " ".join(part for part in [first_name, middle_name, last_name] if part)
  
     opting_new_regime = user_data.get("opting_new_regime", "Yes")
@@ -53,9 +59,9 @@ def get_general_info(user_data):
  
     return {
         "assessment_year": user_data.get("assessment_year", "2026-27"),
-        "pan": user_data.get("pan", "ABCDE1234F"),
+        "pan": user_data.get("pan", ""),
         "full_name": full_name,
-        "date_of_birth": user_data.get("date_of_birth", "10/05/2004"),
+        "date_of_birth": user_data.get("date_of_birth", ""),
         "aadhaar_number": "[Aadhaar Redacted]",
         "mobile_no": user_data.get("mobile_no", ""),
         "email": user_data.get("email", ""),
@@ -336,8 +342,6 @@ def process_itr(user_data):
     bank = get_bank_details(user_data)
     schedule_it = get_schedule_it(user_data)
     print_report(general_info, income, tax, bank, schedule_it)
- 
- 
 if __name__ == "__main__":
     user_data = read_user_data()
     process_itr(user_data)
