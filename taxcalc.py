@@ -10,7 +10,12 @@ def calculate_tax(x):
  
     return tax 
 def read_user_data():
-    file = open("user_data.txt", "r")
+    try:
+        file = open("user_data.txt", "r")
+    except FileNotFoundError:
+        print("ERROR: 'user_data.txt' not found in this folder.")
+        print("Make sure user_data.txt is in the same directory as this script.")
+        raise SystemExit(1)
     user_data = {}
     for line in file:
         line = line.strip()
@@ -25,6 +30,11 @@ def read_user_data():
             continue
         if value.isdigit():
             value = int(value)
+        else:
+            try:
+                value = float(value)
+            except ValueError:
+                pass  # keep as string (e.g. names, PAN, dates, IFSC)
         user_data[key] = value
     file.close()
     return user_data
