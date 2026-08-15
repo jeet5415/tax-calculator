@@ -200,7 +200,6 @@ def compute_tax(user_data, taxable_income):
         + d10_fee_234f
         - d6_relief_89
     )
- 
     # D12: Total Taxes Paid
     tds_paid = user_data.get("tds_paid", 0)
     advance_tax = user_data.get("advance_tax", 0)
@@ -232,8 +231,6 @@ def compute_tax(user_data, taxable_income):
         "d13_amount_payable": d13_amount_payable,
         "d14_refund": d14_refund,
     }
- 
- 
 # ==============================
 # PART E - BANK ACCOUNT DETAILS
 # ==============================
@@ -245,8 +242,6 @@ def get_bank_details(user_data):
         "bank_account_number": user_data.get("bank_account_number", ""),
         "select_for_refund": user_data.get("select_for_refund", "Yes"),
     }
- 
- 
 # ==============================
 # SCHEDULE-IT - ADVANCE TAX / SELF-ASSESSMENT TAX
 # ==============================
@@ -258,8 +253,6 @@ def get_schedule_it(user_data):
         "challan_serial_no": user_data.get("challan_serial_no", ""),
         "tax_paid_challan": user_data.get("tax_paid_challan", 0),
     }
- 
- 
 # ==============================
 # OUTPUT
 # ==============================
@@ -291,7 +284,7 @@ def print_report(general_info, income, tax, bank, schedule_it):
     print(f"Total Deductions   : ₹ {income['total_deductions']:,.2f}")
     print(f"Gross Income       : ₹ {income['gross_income']:,.2f}")
     print(f"Taxable Income     : ₹ {income['taxable_income']:,.2f}")
- 
+    
     print("\n---------- PART D: COMPUTATION OF TAX PAYABLE ----------")
     print(f"D1  Tax before Rebate        : ₹ {tax['d1_tax_before_rebate']:,.2f}")
     print(f"D2  Rebate u/s 87A           : ₹ {tax['d2_rebate_87a']:,.2f}")
@@ -308,41 +301,31 @@ def print_report(general_info, income, tax, bank, schedule_it):
     print(f"D12 Total Taxes Paid         : ₹ {tax['d12_total_taxes_paid']:,.2f}")
     print(f"D13 Amount Payable           : ₹ {tax['d13_amount_payable']:,.2f}")
     print(f"D14 Refund                   : ₹ {tax['d14_refund']:,.2f}")
- 
+    
     print("\n---------- PART E: BANK ACCOUNT DETAILS ----------")
     print(f"IFSC Code          : {bank['bank_ifsc']}")
     print(f"Bank Name          : {bank['bank_name']}")
     print(f"Account Number     : {bank['bank_account_number']}")
     print(f"Selected for Refund: {bank['select_for_refund']}")
- 
     print("\n---------- SCHEDULE-IT: ADVANCE / SELF-ASSESSMENT TAX ----------")
     print(f"BSR Code           : {schedule_it['bsr_code']}")
     print(f"Date of Deposit    : {schedule_it['date_of_deposit']}")
     print(f"Challan Serial No. : {schedule_it['challan_serial_no']}")
     print(f"Tax Paid (Challan) : ₹ {schedule_it['tax_paid_challan']:,.2f}")
- 
     print("\n---------- FINAL RESULT ----------")
+    
     if tax['d13_amount_payable'] > 0:
         print(f"Tax Payable        : ₹ {tax['d13_amount_payable']:,.2f}")
     else:
         print(f"Refund Amount      : ₹ {tax['d14_refund']:,.2f}")
- 
     print("==========================================\n")
- 
- 
 def process_itr(user_data):
-    """Orchestrates the ITR-1 computation: gather info, compute, print."""
- 
     general_info = get_general_info(user_data)
     income = compute_income(user_data)
     tax = compute_tax(user_data, income["taxable_income"])
     bank = get_bank_details(user_data)
     schedule_it = get_schedule_it(user_data)
- 
     print_report(general_info, income, tax, bank, schedule_it)
- 
- 
 if __name__ == "__main__":
     user_data = read_user_data()
- 
-    process_itr(user_data)
+     process_itr(user_data)
