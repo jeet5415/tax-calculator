@@ -1,0 +1,15 @@
+first_name=Karan
+last_name=Patel
+pan=XYZAB1111C
+opting_new_regime=Yes
+gross_salary=12000000
+exempt_allowance=200000
+house_rent=500000
+municipal_tax=20000
+home_loan_interest=150000
+savings_interest=30000
+dividend_income=100000
+total_deductions=100000
+tds_paid=2000000
+advance_tax=500000
+self_assessment_tax=0
