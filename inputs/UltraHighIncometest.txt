@@ -1,0 +1,16 @@
+first_name=Nikhil
+last_name=Agarwal
+pan=STUVW4444F
+opting_new_regime=Yes
+gross_salary=30000000
+exempt_allowance=500000
+house_rent=1200000
+municipal_tax=50000
+home_loan_interest=300000
+savings_interest=150000
+dividend_income=800000
+total_deductions=100000
+tds_paid=6000000
+advance_tax=2000000
+self_assessment_tax=0
+ 
