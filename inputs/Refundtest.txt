@@ -1,4 +1,4 @@
-irst_name=Anita
+first_name=Anita
 last_name=Desai
 pan=PQRSX2222D
 opting_new_regime=No
