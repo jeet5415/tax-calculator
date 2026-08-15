@@ -1,0 +1,15 @@
+irst_name=Anita
+last_name=Desai
+pan=PQRSX2222D
+opting_new_regime=No
+gross_salary=900000
+exempt_allowance=50000
+house_rent=
+municipal_tax=
+home_loan_interest=
+savings_interest=8000
+dividend_income=
+total_deductions=150000
+tds_paid=95000
+advance_tax=
+self_assessment_tax=
