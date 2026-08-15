@@ -1,0 +1,13 @@
+first_name=Sameer
+last_name=Joshi
+pan=LMNOP3333E
+opting_new_regime=No
+gross_salary=1800000
+exempt_allowance=50000
+house_rent=300000
+municipal_tax=15000
+home_loan_interest=450000
+savings_interest=12000
+dividend_income=8000
+total_deductions=200000
+tds_paid=180000
