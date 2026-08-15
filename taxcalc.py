@@ -326,6 +326,9 @@ def process_itr(user_data):
     bank = get_bank_details(user_data)
     schedule_it = get_schedule_it(user_data)
     print_report(general_info, income, tax, bank, schedule_it)
+ 
+ 
 if __name__ == "__main__":
     user_data = read_user_data()
-     process_itr(user_data)
+    process_itr(user_data)
+ 
