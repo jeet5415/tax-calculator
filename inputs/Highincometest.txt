@@ -1,15 +1,167 @@
-first_name=Karan
-last_name=Patel
+# ---------------- PART A: GENERAL INFORMATION ---------------- 
+# Assessment Year, e.g. 2026-27
+assessment_year=2026-27
+ 
+# PAN Number (10 characters, e.g. ABCDE1234F)
 pan=XYZAB1111C
+ 
+# First Name
+first_name=Karan
+ 
+# Middle Name (leave blank if none)
+middle_name=
+ 
+# Last Name
+last_name=Patel
+ 
+# Date of Birth (DD/MM/YYYY)
+date_of_birth=
+ 
+# Mobile Number
+mobile_no=
+ 
+# E-mail Address
+email=
+ 
+ 
+# ---------------- PART A: ADDRESS ----------------
+ 
+# Flat/Door/Block No.
+flat_door_block=
+ 
+# Name of Premises/Building/Village
+premises_name=
+ 
+# Road/Street/Post Office
+road_street=
+ 
+# Area/Locality
+area_locality=
+ 
+# Town/City/District
+town_city_district=
+ 
+# State
+state=
+ 
+# Country
+country=India
+ 
+# PIN Code
+pin_code=
+ 
+ 
+# ---------------- PART A: FILING DETAILS ----------------
+ 
+# Filed under section — choose one of:
+#   139(1)-On or before due date
+#   139(4)-Belated
+#   139(5)-Revised
+#   119(2)(b)-After Condonation of delay
+filed_under_section=139(1)-On or before due date
+ 
+# Nature of employment — choose one of:
+#   Central Govt / State Govt / Public Sector Undertaking /
+#   Pensioners-CG / Pensioners-SG / Pensioners-PSU /
+#   Pensioners-Others / Others / Not Applicable
+nature_of_employment=Not Applicable
+ 
+# Opting for New Tax Regime u/s 115BAC? (Yes/No)
 opting_new_regime=Yes
+ 
+ 
+# ---------------- PART B: SALARY INCOME ----------------
+ 
+# Gross Salary for the financial year (before any exemptions)
 gross_salary=12000000
+ 
+# Exempt allowance portion of salary (e.g. HRA/LTA exemption, standard deduction add-ons)
+# Leave blank for 0
 exempt_allowance=200000
+ 
+ 
+# ---------------- PART B: HOUSE PROPERTY INCOME ----------------
+ 
+# Annual rent received / deemed rent
 house_rent=500000
+ 
+# Municipal taxes paid on the house property during the year
 municipal_tax=20000
+ 
+# Interest paid on home loan during the year
 home_loan_interest=150000
+ 
+ 
+# ---------------- PART B: INCOME FROM OTHER SOURCES ----------------
+ 
+# Interest earned from savings bank account / FDs
 savings_interest=30000
+ 
+# Dividend income received
 dividend_income=100000
+ 
+ 
+# ---------------- DEDUCTIONS ----------------
+ 
+# Total deductions claimed (e.g. Standard Deduction, 80C, 80D — as applicable under chosen regime)
 total_deductions=100000
+ 
+ 
+# ---------------- PART D: RELIEF / INTEREST / FEE ----------------
+ 
+# Relief u/s 89 (e.g. for salary arrears) — leave blank if none
+relief_89=
+ 
+# Interest u/s 234A (delay in filing) — leave blank if none
+interest_234a=
+ 
+# Interest u/s 234B (default in advance tax) — leave blank if none
+interest_234b=
+ 
+# Interest u/s 234C (deferred advance tax instalments) — leave blank if none
+interest_234c=
+ 
+# Fee u/s 234F (late filing fee) — leave blank if none
+fee_234f=
+ 
+ 
+# ---------------- TAXES ALREADY PAID ----------------
+ 
+# Total TDS deducted (as per Form 16 / Form 26AS)
 tds_paid=2000000
+ 
+# Advance tax paid, if any
 advance_tax=500000
-self_assessment_tax=0
+ 
+# Self-assessment tax paid, if any
+self_assessment_tax=
+ 
+ 
+# ---------------- PART E: BANK ACCOUNT DETAILS ----------------
+ 
+# IFSC Code of your bank
+bank_ifsc=
+ 
+# Name of the Bank
+bank_name=
+ 
+# Bank Account Number
+bank_account_number=
+ 
+# Select this account for refund credit? (Yes/No)
+select_for_refund=Yes
+ 
+# ---------------- SCHEDULE-IT: ADVANCE / SELF-ASSESSMENT TAX CHALLAN ----------------
+# (Fill in only if you paid advance tax or self-assessment tax via challan)
+ 
+# BSR Code of the bank branch
+bsr_code=
+ 
+# Date of Deposit (DD/MM/YYYY)
+date_of_deposit=
+ 
+# Serial Number of Challan
+challan_serial_no=
+ 
+# Tax paid as per this challan
+tax_paid_challan=
