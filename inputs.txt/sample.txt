@@ -1,0 +1,230 @@
+ # ---------------------------------------------------------------------
+# PART A — GENERAL INFORMATION
+# ---------------------------------------------------------------------
+assessment_year=2026-27
+pan=FGHIJ4567K
+first_name=Vikram
+middle_name=Ashok
+last_name=Rana
+date_of_birth=12/07/1995
+mobile_no=9825011223
+secondary_mobile_no=9974455667
+email=vikram.rana@example.com
+secondary_email=vikram.rana.alt@example.com
+ 
+# Filed under section (Revised return, so A18 receipt/date are used below)
+filed_under_section=139(5)-Revised
+ 
+# A16 — filed in response to a notice
+notice_type=139(9)
+ 
+# A18 — revised/defective return details
+receipt_no=RCPT2026001234
+original_return_date=31/07/2026
+ 
+# A19 — DIN details of notice/order
+din_number=DIN20260812345
+din_date=10/08/2026
+ 
+# A17 — Nature of employment
+nature_of_employment=Others
+ 
+# A20 — Opting to stay in old regime (No = new regime)
+opting_new_regime=Yes
+ 
+# A21 — Seventh proviso to 139(1)
+seventh_proviso_flag=Yes
+foreign_travel_flag=Yes
+foreign_travel_exp=250000
+electricity_flag=Yes
+electricity_exp=125000
+other_seventh_proviso_flag=Yes
+other_seventh_proviso_condition=Yes
+ 
+# A22 — Representative assessee
+rep_assessee_flag=Yes
+rep_name=Anjali Rana
+rep_email=anjali.rana@example.com
+rep_contact=9898001234
+ 
+# --- Primary Address (A8a-A14a) ---
+flat_door_block=501
+premises_name=Orchid Heights
+road_street=Judges Bungalow Road
+area_locality=Bodakdev
+town_city_district=Ahmedabad
+state=Gujarat
+country=India
+pin_code=380054
+ 
+# --- Secondary Address (A8b-A14b) ---
+flat_door_block_2=12
+premises_name_2=Sea Breeze Apartments
+road_street_2=Marine Drive
+area_locality_2=Colaba
+town_city_district_2=Mumbai
+state_2=Maharashtra
+country_2=India
+pin_code_2=400001
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — INCOME (SALARY)
+# ---------------------------------------------------------------------
+salary_17_1=1200000
+perquisites_17_2=80000
+profit_lieu_salary_17_3=20000
+gross_salary=1300000
+exempt_allowance_10=45000
+standard_deduction_16ia=75000
+entertainment_allowance_16ii=5000
+professional_tax_16iii=2400
+exempt_allowance=82400
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — HOUSE PROPERTY 1 (let out, co-owned)
+# ---------------------------------------------------------------------
+house_property_address=Flat 12B, Palm Residency, Thaltej, Ahmedabad
+house_property_type=Let out
+house_property_co_owned=Yes
+house_property_share_pct=60
+co_owner_pan=FGHIJ4568L
+house_property_tenant_name=Rakesh Verma
+tenant_pan=FGHIJ4569M
+house_rent=180000
+unrealized_rent=5000
+municipal_tax=6000
+home_loan_interest=90000
+arrears_rent=10000
+ 
+# ---------------------------------------------------------------------
+# PART B — HOUSE PROPERTY 2
+# ---------------------------------------------------------------------
+house_rent_2=150000
+municipal_tax_2=5000
+home_loan_interest_2=60000
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — OTHER SOURCES / CAPITAL GAINS
+# ---------------------------------------------------------------------
+savings_interest=18000
+other_income_nature=Savings account and fixed deposit interest
+dividend_income=32000
+dividend_quarterly=Q1-8000,Q2-8000,Q3-8000,Q4-8000
+family_pension_deduction_57iia=15000
+ 
+ltcg_sale_consideration=620000
+ltcg_cost_of_acquisition=480000
+ 
+ 
+# ---------------------------------------------------------------------
+# PART C — DEDUCTIONS
+# ---------------------------------------------------------------------
+deduction_80c=150000
+deduction_80ccc=20000
+deduction_80ccd1=30000
+deduction_80ccd1b=50000
+deduction_80ccd2=40000
+deduction_80cch=5000
+deduction_80d=25000
+deduction_80dd=75000
+deduction_80ddb=40000
+deduction_80e=35000
+deduction_80ee=50000
+deduction_80eea=150000
+deduction_80eeb=150000
+deduction_80g=10000
+deduction_80gg=60000
+deduction_80gga=15000
+deduction_80ggc=10000
+deduction_80tta=10000
+deduction_80ttb=50000
+deduction_80u=75000
+deduction_other=5000
+total_deductions=790000
+ 
+# C3 — Exempt income (reporting only)
+exempt_income_amount=5000
+exempt_income_nature=Agricultural income
+ 
+ 
+# ---------------------------------------------------------------------
+# PART D — TAXES / INTEREST / FEES / RELIEF
+# ---------------------------------------------------------------------
+relief_89=8000
+interest_234a=1200
+interest_234b=3500
+interest_234c=2100
+fee_234f=1000
+fee_234i_revised_return=500
+ 
+tds_paid=145000
+advance_tax=60000
+self_assessment_tax=15000
+tcs_collected=8000
+ 
+ 
+# ---------------------------------------------------------------------
+# PART E — BANK ACCOUNT DETAILS
+# ---------------------------------------------------------------------
+bank_ifsc_1=UTIB0001234
+bank_name_1=Axis Bank
+bank_account_number_1=911010098765432
+account_type_1=Savings
+select_for_refund_1=Yes
+ 
+bank_ifsc_2=PUNB0567800
+bank_name_2=Punjab National Bank
+bank_account_number_2=0876543210987
+account_type_2=Current
+select_for_refund_2=No
+ 
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-IT — ADVANCE TAX / SELF-ASSESSMENT TAX CHALLANS
+# ---------------------------------------------------------------------
+bsr_code_1=0510234
+date_of_deposit_1=12/06/2025
+challan_serial_no_1=00234
+tax_paid_challan_1=30000
+ 
+bsr_code_2=0510234
+date_of_deposit_2=14/12/2025
+challan_serial_no_2=00567
+tax_paid_challan_2=30000
+ 
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-TDS — TAX DEDUCTED AT SOURCE
+# ---------------------------------------------------------------------
+tan_1=AHMV11122P
+deductor_name_1=Silverline Tech Pvt Ltd
+tds_section_1=192
+gross_payment_1=1300000
+tds_year_1=2026
+tax_deducted_1=125000
+tds_claimed_1=125000
+ 
+tan_2=AHMR33344Q
+deductor_name_2=Rakesh Verma
+tds_section_2=194-IB
+gross_payment_2=180000
+tds_year_2=2026
+tax_deducted_2=18000
+tds_claimed_2=18000
+ 
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-TCS — TAX COLLECTED AT SOURCE
+# ---------------------------------------------------------------------
+tcs_tan_1=AHMF55566R
+collector_name_1=SBI Forex Branch
+amount_paid_1=500000
+tax_collected_1=10000
+tcs_claimed_1=8000
+ 
+# =====================================================================
+# END OF TEMPLATE — save as inputs/user_data.txt and run the script
+# =====================================================================
