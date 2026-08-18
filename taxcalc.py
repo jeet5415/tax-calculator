@@ -10,8 +10,21 @@ def calculate_tax(x):
  
     return tax 
 import os
- 
- 
+import re
+
+FORCE_STRING_FIELDS = {
+    "pan", "co_owner_pan", "tenant_pan",
+    "aadhaar_number",
+    "mobile_no", "secondary_mobile_no",
+    "pin_code", "pin_code_2",
+    "din_number",
+    "receipt_no",
+    "bank_ifsc", "bank_account_number",
+    "bsr_code", "challan_serial_no",
+    "tan", "tcs_tan",
+}
+
+
 def read_user_data():
     filepath = os.path.join("inputs", "user_data.txt")
  
@@ -33,13 +46,16 @@ def read_user_data():
         value = value.strip()
         if value == "":
             continue
-        if value.isdigit():
+        base_key = re.sub(r"_\d+$", "", key)  # e.g. "bank_account_number_2" -> "bank_account_number"
+        if base_key in FORCE_STRING_FIELDS:
+            pass  # keep as string, preserves leading zeros and formatting
+        elif value.isdigit():
             value = int(value)
         else:
             try:
                 value = float(value)
             except ValueError:
-                pass  # keep as string (e.g. names, PAN, dates, IFSC)
+                pass  # keep as string (e.g. names, dates, other free text)
         user_data[key] = value
     file.close()
     return user_data
