@@ -1,0 +1,245 @@
+# =====================================================================
+# ITR-1 SAHAJ — USER DATA INPUT TEMPLATE (AY 2026-27)
+# TEST CASE 6: Near-nil income, belated return with 234F late-filing fee
+#              (income below Rs 5L → fee capped at Rs 1,000)
+#              | New Regime | Payable ₹400
+# =====================================================================
+ 
+# ---------------------------------------------------------------------
+# PART A — GENERAL INFORMATION
+# ---------------------------------------------------------------------
+assessment_year=2026-27
+pan=FLKPN2245W
+first_name=Priya
+middle_name=
+last_name=Chauhan
+date_of_birth=14/09/2001
+mobile_no=9723001122
+secondary_mobile_no=
+email=priya.chauhan@example.com
+secondary_email=
+ 
+# Filed under section — pick one exactly as written:
+# 139(1)-On or before due date | 139(4)-Belated | 139(5)-Revised | 119(2)(b)-After Condonation of delay
+filed_under_section=139(4)-Belated
+ 
+# A16 — fill ONLY if filed in response to a notice (139(9)/142(1)/148/153C). Else leave blank.
+notice_type=
+ 
+# A18 — fill ONLY if this is a revised/defective return
+receipt_no=
+original_return_date=
+ 
+# A19 — fill ONLY if filed in response to notice/order (DIN details)
+din_number=
+din_date=
+ 
+# A17 — Nature of employment, pick one:
+# Central Govt. | State Govt. | Public Sector Undertaking | Pensioners-CG |
+# Pensioners-SG | Pensioners-PSU | Pensioners-Others | Others | Not Applicable
+nature_of_employment=Others
+ 
+# A20 — Opting to stay in OLD regime? (Yes = old regime, No = new regime/default)
+opting_new_regime=Yes
+ 
+# A21 — Seventh proviso to 139(1) (filing though not otherwise required). Default No.
+seventh_proviso_flag=No
+foreign_travel_flag=No
+foreign_travel_exp=0
+electricity_flag=No
+electricity_exp=0
+other_seventh_proviso_flag=No
+other_seventh_proviso_condition=No
+ 
+# A22 — Filing as a representative assessee?
+rep_assessee_flag=No
+rep_name=
+rep_email=
+rep_contact=
+ 
+# --- Primary Address (A8a-A14a) ---
+flat_door_block=3 Gokul Nagar
+premises_name=Gokul Nagar Society
+road_street=Nikol Road
+area_locality=Nikol
+town_city_district=Ahmedabad
+state=Gujarat
+country=India
+pin_code=382350
+ 
+# --- Secondary Address (A8b-A14b) — leave all blank if not applicable ---
+flat_door_block_2=
+premises_name_2=
+road_street_2=
+area_locality_2=
+town_city_district_2=
+state_2=
+country_2=India
+pin_code_2=
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — INCOME (SALARY)
+# ---------------------------------------------------------------------
+# Option 1: itemized breakup (fill these three) -- preferred if you have Form 16
+salary_17_1=0
+perquisites_17_2=0
+profit_lieu_salary_17_3=0
+# Option 2: OR just fill flat gross salary and leave the three above as 0
+gross_salary=380000
+ 
+# Allowances exempt u/s 10 (HRA/LTA exemption already included in above, subtracted here)
+exempt_allowance_10=0
+ 
+# Deductions u/s 16 — itemized (preferred)
+standard_deduction_16ia=0
+entertainment_allowance_16ii=0
+professional_tax_16iii=0
+# OR flat total (leave the three above as 0 if using this)
+exempt_allowance=0
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — HOUSE PROPERTY 1
+# ---------------------------------------------------------------------
+house_property_address=
+# Type: Let out | Self-occupied | Deemed let out
+house_property_type=Self-occupied
+house_property_co_owned=No
+house_property_share_pct=100
+co_owner_pan=
+house_property_tenant_name=
+tenant_pan=
+house_rent=0
+unrealized_rent=0
+municipal_tax=0
+home_loan_interest=0
+arrears_rent=0
+ 
+# ---------------------------------------------------------------------
+# PART B — HOUSE PROPERTY 2 (leave 0 if only 1 property, or none)
+# ---------------------------------------------------------------------
+house_rent_2=0
+municipal_tax_2=0
+home_loan_interest_2=0
+ 
+ 
+# ---------------------------------------------------------------------
+# PART B — OTHER SOURCES / CAPITAL GAINS
+# ---------------------------------------------------------------------
+savings_interest=4000
+other_income_nature=Savings Bank Interest
+dividend_income=0
+# Quarterly breakup for 234C relief, e.g.: Q1-500,Q2-1200,Q3-800,Q4-1000
+dividend_quarterly=
+family_pension_deduction_57iia=0
+ 
+# LTCG u/s 112A (only reportable up to Rs 1.25L exemption; script computes the gain)
+ltcg_sale_consideration=0
+ltcg_cost_of_acquisition=0
+ 
+ 
+# ---------------------------------------------------------------------
+# PART C — DEDUCTIONS
+# ---------------------------------------------------------------------
+deduction_80c=0
+deduction_80ccc=0
+deduction_80ccd1=0
+deduction_80ccd1b=0
+deduction_80ccd2=0
+deduction_80cch=0
+deduction_80d=0
+deduction_80dd=0
+deduction_80ddb=0
+deduction_80e=0
+deduction_80ee=0
+deduction_80eea=0
+deduction_80eeb=0
+deduction_80g=0
+deduction_80gg=0
+deduction_80gga=0
+deduction_80ggc=0
+deduction_80tta=0
+deduction_80ttb=0
+deduction_80u=0
+deduction_other=0
+# OR skip all of the above and just fill one flat total instead:
+total_deductions=0
+ 
+# C3 — Exempt income (reporting only, e.g. agricultural income up to Rs 5,000). Not taxed.
+exempt_income_amount=0
+exempt_income_nature=
+ 
+ 
+# ---------------------------------------------------------------------
+# PART D — TAXES / INTEREST / FEES / RELIEF
+# ---------------------------------------------------------------------
+relief_89=0
+interest_234a=0
+interest_234b=0
+interest_234c=0
+fee_234f=1000
+fee_234i_revised_return=0
+ 
+# Total taxes already paid (script auto-sums these into D12)
+tds_paid=600
+advance_tax=0
+self_assessment_tax=0
+tcs_collected=0
+ 
+ 
+# ---------------------------------------------------------------------
+# PART E — BANK ACCOUNT DETAILS (add as many as you hold)
+# ---------------------------------------------------------------------
+# Numbered rows: _1, _2, _3 ... script auto-stops at first missing set.
+bank_ifsc_1=UBIN0812345
+bank_name_1=Union Bank of India
+bank_account_number_1=350102456789
+# account_type: Savings | Current
+account_type_1=Savings
+# select_for_refund: Yes | No (at least one account must be Yes)
+select_for_refund_1=Yes
+ 
+# Second account (leave ALL fields on this row blank to skip it entirely)
+bank_ifsc_2=
+bank_name_2=
+bank_account_number_2=
+account_type_2=
+select_for_refund_2=
+ 
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-IT — ADVANCE TAX / SELF-ASSESSMENT TAX CHALLANS
+# ---------------------------------------------------------------------
+# Add numbered rows _1, _2 ... leave all blank if not applicable
+bsr_code_1=
+date_of_deposit_1=
+challan_serial_no_1=
+tax_paid_challan_1=
+ 
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-TDS — TAX DEDUCTED AT SOURCE (Form 16/16A/16C/27D)
+# ---------------------------------------------------------------------
+# Add numbered rows _1, _2 ... leave all blank if not applicable
+tan_1=AHMC02233X
+deductor_name_1=Chauhan Retail Ventures
+tds_section_1=192
+gross_payment_1=380000
+tds_year_1=2025-26
+tax_deducted_1=600
+tds_claimed_1=600
+ 
+# ---------------------------------------------------------------------
+# SCHEDULE-TCS — TAX COLLECTED AT SOURCE (Form 27D)
+# ---------------------------------------------------------------------
+# Add numbered rows _1, _2 ... leave all blank if not applicable
+tcs_tan_1=
+collector_name_1=
+amount_paid_1=
+tax_collected_1=
+tcs_claimed_1=
+ 
+# =====================================================================
+# END OF TEMPLATE — save as inputs/user_data.txt and run the script
+# =====================================================================
