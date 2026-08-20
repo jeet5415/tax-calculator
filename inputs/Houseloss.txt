@@ -1,8 +1,6 @@
  =====================================================================
 # ITR-1 SAHAJ — USER DATA INPUT TEMPLATE (AY 2026-27)
-# TEST CASE 8: Senior citizen, self-occupied property with home loan
-#              interest loss, 80TTB deduction, relief u/s 89 (arrears)
-#              | Old Regime | Payable ₹5,420
+
 # =====================================================================
  
 # ---------------------------------------------------------------------
