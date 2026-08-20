@@ -1,8 +1,6 @@
 # =====================================================================
 # ITR-1 SAHAJ — USER DATA INPUT TEMPLATE (AY 2026-27)
-# TEST CASE 6: Near-nil income, belated return with 234F late-filing fee
-#              (income below Rs 5L → fee capped at Rs 1,000)
-#              | New Regime | Payable ₹400
+
 # =====================================================================
  
 # ---------------------------------------------------------------------
