@@ -15,13 +15,14 @@ import re
 FORCE_STRING_FIELDS = {
     "pan", "co_owner_pan", "tenant_pan",
     "aadhaar_number",
-    "mobile_no", "secondary_mobile_no",
+    "mobile_no", "secondary_mobile_no", "rep_contact",
     "pin_code", "pin_code_2",
     "din_number",
     "receipt_no",
     "bank_ifsc", "bank_account_number",
     "bsr_code", "challan_serial_no",
     "tan", "tcs_tan",
+    "date_of_birth", "original_return_date", "din_date", "date_of_deposit", "tds_year",
 }
 
 
