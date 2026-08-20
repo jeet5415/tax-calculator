@@ -1,3 +1,4 @@
+
 def calculate_tax(x): 
     tax = (
         (max(0, min(x, 800000) - 400000) * 0.05) +
@@ -11,7 +12,7 @@ def calculate_tax(x):
     return tax 
 import os
 import re
-
+ 
 FORCE_STRING_FIELDS = {
     "pan", "co_owner_pan", "tenant_pan",
     "aadhaar_number",
@@ -24,8 +25,8 @@ FORCE_STRING_FIELDS = {
     "tan", "tcs_tan",
     "date_of_birth", "original_return_date", "din_date", "date_of_deposit", "tds_year",
 }
-
-
+ 
+ 
 def read_user_data():
     filepath = os.path.join("inputs", "user_data.txt")
  
@@ -66,8 +67,10 @@ def read_user_data():
 def get_general_info(user_data):
     g = user_data.get
     full_name = " ".join(p for p in [g("first_name", ""), g("middle_name", ""), g("last_name", "")] if p)
-    opting_new_regime = g("opting_new_regime", "Yes")
-    tax_regime = "New Regime" if str(opting_new_regime).strip().lower() == "yes" else "Old Regime"
+    # opting_new_regime here means "opting OUT of the new regime" (i.e. choosing old regime) —
+    # matches the real ITR-1 field wording. Default "No" = stays in New Regime.
+    opting_new_regime = g("opting_new_regime", "No")
+    tax_regime = "Old Regime" if str(opting_new_regime).strip().lower() == "yes" else "New Regime"
  
     info = {
         "assessment_year": g("assessment_year", "2026-27"),
@@ -121,7 +124,10 @@ def compute_income(user_data):
     co_owner_pan = g("co_owner_pan", "")
     tenant_pan = g("tenant_pan", "")
     annual_value = g("house_rent", 0) - g("unrealized_rent", 0) - g("municipal_tax", 0)
-    house_property_income = annual_value * 0.70 - g("home_loan_interest", 0) + g("arrears_rent", 0) * 0.7
+    home_loan_interest = g("home_loan_interest", 0)
+    if str(house_property_type).strip().lower() == "self-occupied":
+        home_loan_interest = min(home_loan_interest, 200000)  # Section 24(b) cap for self-occupied property
+    house_property_income = annual_value * 0.70 - home_loan_interest + g("arrears_rent", 0) * 0.7
  
     # House Property 2
     house_property_income_2 = (
@@ -149,10 +155,11 @@ def compute_income(user_data):
     ltcg_sale_consideration = g("ltcg_sale_consideration", 0)
     ltcg_cost_of_acquisition = g("ltcg_cost_of_acquisition", 0)
     ltcg_112a = max(0, ltcg_sale_consideration - ltcg_cost_of_acquisition)
+    ltcg_112a_taxable = max(0, ltcg_112a - 125000)  # only the excess over Rs 1.25L exemption is taxable
  
     gross_income = (
         net_salary + house_property_income + savings_interest
-        + dividend_income - family_pension_deduction_57iia + ltcg_112a
+        + dividend_income - family_pension_deduction_57iia + ltcg_112a_taxable
     )
  
     taxable_income = max(0, gross_income - total_deductions)
@@ -180,6 +187,7 @@ def compute_income(user_data):
         "ltcg_sale_consideration": ltcg_sale_consideration,
         "ltcg_cost_of_acquisition": ltcg_cost_of_acquisition,
         "ltcg_112a": ltcg_112a,
+        "ltcg_112a_taxable": ltcg_112a_taxable,
         "deductions_c": deductions_c,
         "exempt_income_amount": exempt_income_amount,
         "exempt_income_nature": exempt_income_nature,
@@ -366,7 +374,8 @@ def print_report(general_info, income, tax, bank, schedule_it, schedule_tds, sch
     if income['ltcg_112a']:
         print(f"LTCG u/s 112A      : ₹ {income['ltcg_112a']:,.2f} "
               f"(Sale ₹{income['ltcg_sale_consideration']:,.2f} - Cost ₹{income['ltcg_cost_of_acquisition']:,.2f})"
-              + (" [Not taxable, within Rs 1.25L]" if income['ltcg_112a'] <= 125000 else ""))
+              + (" [Not taxable, within Rs 1.25L]" if income['ltcg_112a_taxable'] == 0
+                 else f" [₹ {income['ltcg_112a_taxable']:,.2f} taxable above Rs 1.25L exemption]"))
     if income['family_pension_deduction_57iia']:
         print(f"Family Pension Ded.(57iia): ₹ {income['family_pension_deduction_57iia']:,.2f}")
     # Part C: itemized deductions only printed for heads that were actually used
